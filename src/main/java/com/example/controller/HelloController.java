@@ -22,7 +22,7 @@ public class HelloController {
             throw new RuntimeException("ID must not be zero");
         }
         if (id == 999) {
-            throw new RuntimeException("User not found");
+            throw new RuntimeException("User with id 999 does not exist");
         }
         return new ResponseEntity<>(new ApiResponse<>(HttpStatus.CREATED.value(), "User created successfully", "Data" +
                 " object"),
