@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.jtrac.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

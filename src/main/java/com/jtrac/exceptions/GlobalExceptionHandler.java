@@ -1,6 +1,6 @@
-package com.example.exceptions;
+package com.jtrac.exceptions;
 
-import com.example.responses.ErrorResponse;
+import com.jtrac.responses.ErrorResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

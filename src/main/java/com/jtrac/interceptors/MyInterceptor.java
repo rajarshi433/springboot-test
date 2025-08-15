@@ -1,4 +1,4 @@
-package com.example.interceptors;
+package com.jtrac.interceptors;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -15,8 +15,6 @@ public class MyInterceptor implements HandlerInterceptor {
                              HttpServletResponse response,
                              Object handler) throws Exception {
         System.out.println("PreHandle: Before controller logic");
-        System.out.println(request.getAuthType());
-        System.out.println(response);
         return true; // if false, request will not proceed
     }
 

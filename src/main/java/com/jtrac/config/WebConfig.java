@@ -1,6 +1,6 @@
-package com.example.config;
+package com.jtrac.config;
 
-import com.example.interceptors.MyInterceptor;
+import com.jtrac.interceptors.MyInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

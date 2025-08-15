@@ -1,6 +1,6 @@
-package com.example.controller;
+package com.jtrac.controller;
 
-import com.example.responses.ApiResponse;
+import com.jtrac.responses.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +11,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public ResponseEntity<ApiResponse<Integer>> hello() {
-        return new ResponseEntity<>(new ApiResponse<>(HttpStatus.CREATED.value(), "User created successfully", 1000),
+        return new ResponseEntity<>(new ApiResponse<>(HttpStatus.CREATED.value(), "UserEntity created successfully", 1000),
                 HttpStatus.CREATED);
     }
 
@@ -22,9 +22,9 @@ public class HelloController {
             throw new RuntimeException("ID must not be zero");
         }
         if (id == 999) {
-            throw new RuntimeException("User with id 999 does not exist");
+            throw new RuntimeException("UserEntity with id 999 does not exist");
         }
-        return new ResponseEntity<>(new ApiResponse<>(HttpStatus.CREATED.value(), "User created successfully", "Data" +
+        return new ResponseEntity<>(new ApiResponse<>(HttpStatus.CREATED.value(), "UserEntity created successfully", "Data" +
                 " object"),
                 HttpStatus.CREATED);
     }
