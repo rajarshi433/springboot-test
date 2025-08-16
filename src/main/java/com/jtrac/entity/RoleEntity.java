@@ -10,15 +10,15 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Entity(name = "roles")
-@Table(name = "roles")
+@Entity(name = "t_role")
+@Table(name = "t_role")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class RoleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int roleId;
+    private Integer roleId;
 
     @Column(nullable = false, unique = true)
     private String roleName;

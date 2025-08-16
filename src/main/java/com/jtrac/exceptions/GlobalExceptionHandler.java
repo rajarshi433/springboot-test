@@ -19,8 +19,11 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleGlobal(Exception ex, WebRequest request) {
         logger.error("Unexpected error", ex);
         return new ResponseEntity<>(
-                new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage(),
-                        request.getDescription(false)),
+                new ErrorResponse(
+                        HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                        ex.getMessage(),
+                        request.getDescription(false)
+                ),
                 HttpStatus.INTERNAL_SERVER_ERROR
         );
     }

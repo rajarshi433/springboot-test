@@ -2,7 +2,6 @@ package com.jtrac.controller;
 
 import com.jtrac.dto.UserRequestDTO;
 import com.jtrac.dto.UserResponseDTO;
-import com.jtrac.entity.UserEntity;
 import com.jtrac.responses.ApiResponse;
 import com.jtrac.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -30,8 +30,14 @@ public class UserServiceImpl implements UserService {
         List<UserEntity> users = userRepository.findAllUsers();
 
         if (users.isEmpty())
-            return new ResponseEntity<>(new ApiResponse<>(HttpStatus.NOT_FOUND.value(), "No Users Found", null),
-                    HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(
+                    new ApiResponse<>(
+                            HttpStatus.NOT_FOUND.value(),
+                            "No Users Found",
+                            null
+                    ),
+                    HttpStatus.NOT_FOUND
+            );
 
         List<UserResponseDTO> userResponseDTOList = new ArrayList<>();
 
@@ -46,8 +52,14 @@ public class UserServiceImpl implements UserService {
             userResponseDTOList.add(userResponseDTO);
         }
 
-        return new ResponseEntity<>(new ApiResponse<>(HttpStatus.OK.value(), "Success", userResponseDTOList),
-                HttpStatus.OK);
+        return new ResponseEntity<>(
+                new ApiResponse<>(
+                        HttpStatus.OK.value(),
+                        "Success",
+                        userResponseDTOList
+                ),
+                HttpStatus.OK
+        );
     }
 
     @Override
@@ -60,11 +72,22 @@ public class UserServiceImpl implements UserService {
                 userDTO.getPassword(), role.getRoleName());
 
         if (rowsInserted == 1)
-            return new ResponseEntity<>(new ApiResponse<>(HttpStatus.CREATED.value(), "Success", rowsInserted),
-                    HttpStatus.CREATED);
+            return new ResponseEntity<>(
+                    new ApiResponse<>(
+                            HttpStatus.CREATED.value(),
+                            "Success",
+                            rowsInserted
+                    ),
+                    HttpStatus.CREATED
+            );
 
-        return new ResponseEntity<>(new ApiResponse<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Failed",
-                rowsInserted),
-                HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(
+                new ApiResponse<>(
+                        HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                        "Failed",
+                        rowsInserted
+                ),
+                HttpStatus.INTERNAL_SERVER_ERROR
+        );
     }
 }
