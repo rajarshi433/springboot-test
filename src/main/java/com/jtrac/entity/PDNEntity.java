@@ -59,6 +59,8 @@ public class PDNEntity {
     private LocalDateTime reviewedAt;
     private String deployedBy;
     private LocalDateTime deployedAt;
+    private Boolean delivered;
+    private LocalDateTime deliveredAt;
     private Boolean sentBack;
     private String sentBackBy;
 

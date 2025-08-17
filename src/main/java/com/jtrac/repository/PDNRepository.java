@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Repository
 public interface PDNRepository extends JpaRepository<PDNEntity, Long> {
@@ -21,5 +22,26 @@ public interface PDNRepository extends JpaRepository<PDNEntity, Long> {
                 String git, LocalDateTime lastUpdated, String loggedBy, String module,
                 String pdnNumber, String problemId, String problemSource, String product,
                 String reviewStatus, String reviewerName, Long reviewerId,
-                Boolean sentBack, String subModule, Integer userId);
+                Boolean delivered, Boolean sentBack, String subModule, Integer userId);
+
+    @Query(nativeQuery = true, value = QueryConstants.GET_ALL_PDNS)
+    List<PDNEntity> findAllPDNs();
+
+    @Query(nativeQuery = true, value = QueryConstants.GET_PDNS_BY_GIT)
+    List<PDNEntity> findPDNsByGit(String git);
+
+    @Query(nativeQuery = true, value = QueryConstants.GET_PDNS_BY_DEVELOPER)
+    List<PDNEntity> findPDNsByDeveloper(Long userId);
+
+    @Query(nativeQuery = true, value = QueryConstants.GET_PDNS_BY_REVIEWER)
+    List<PDNEntity> findPDNsByReviewer(Long reviewerId);
+
+    @Query(nativeQuery = true, value = QueryConstants.GET_PDNS_NOT_REVIEWED)
+    List<PDNEntity> findPDNsNotReviewed(Long userId);
+
+    @Query(nativeQuery = true, value = QueryConstants.GET_PDNS_NOT_DEPLOYED)
+    List<PDNEntity> findPDNsNotDeployed();
+
+    @Query(nativeQuery = true, value = QueryConstants.GET_PDNS_BY_FILTER_OBJ)
+    List<PDNEntity> findPDNsByFilterObj();
 }
